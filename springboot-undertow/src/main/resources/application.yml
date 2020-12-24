@@ -1,0 +1,17 @@
+server:
+  port: 8001
+
+
+my:
+  user:
+    id: 1L
+    username: lf
+    password: 123456
+
+#debug: true
+# 配置mvc静态资源默认访问路径和项目存放位置
+spring:
+  mvc:
+    static-path-pattern: /res/**
+  resources:
+    static-locations: classpath:/static/
