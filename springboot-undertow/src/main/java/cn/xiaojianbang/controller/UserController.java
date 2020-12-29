@@ -17,8 +17,9 @@ public class UserController {
     private User user;
 
 
-    @GetMapping("1")
-    public String getUserById(){
+    @GetMapping("/id")
+    public String getUserById(Long id){
+        user.setId(id.toString());
         return user.toString();
     }
 }

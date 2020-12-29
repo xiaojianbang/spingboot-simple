@@ -10,8 +10,8 @@ my:
 
 #debug: true
 # 配置mvc静态资源默认访问路径和项目存放位置
-spring:
-  mvc:
-    static-path-pattern: /res/**
-  resources:
-    static-locations: classpath:/static/
+#spring:
+#  mvc:
+#    static-path-pattern: /res/**
+#  resources:
+#    static-locations: classpath:/static/
