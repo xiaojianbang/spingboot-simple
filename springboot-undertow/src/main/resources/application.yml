@@ -8,6 +8,8 @@ my:
     username: lf
     password: 123456
 
+
+
 #debug: true
 # 配置mvc静态资源默认访问路径和项目存放位置
 #spring:
@@ -15,3 +17,6 @@ my:
 #    static-path-pattern: /res/**
 #  resources:
 #    static-locations: classpath:/static/
+dingtalk:
+  access-token: ef954eb8c8dc95782224e0a856872092e55e048107e8b1d39c11eb1b4eb14dc4
+  secret: SEC734c375ce07f3a58ae244df4e84f2ccb064d28603ab5608609712d006aa375ba

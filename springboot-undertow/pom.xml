@@ -13,6 +13,13 @@
     <artifactId>springboot-undertow</artifactId>
 
     <dependencies>
+        <!-- 引入钉钉机器人提醒服务 -->
+        <dependency>
+            <groupId>cn.xiaojianbang</groupId>
+            <artifactId>dingtalk-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -35,6 +42,15 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>cn.xiaojianbang</groupId>-->
+<!--            <artifactId>dingtalk-spring-boot-starter</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/src/main/resources/lib/dingtalk-spring-boot-starter-1.0-SNAPSHOT.jar</systemPath>-->
+<!--        </dependency>-->
+
     </dependencies>
 
 
@@ -45,6 +61,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <includeSystemScope>true</includeSystemScope>
                     <excludes>
                         <exclude>
                             <groupId>org.springframework.boot</groupId>
