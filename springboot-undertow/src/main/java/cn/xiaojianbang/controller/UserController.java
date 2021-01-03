@@ -4,14 +4,18 @@ import cn.xiaojianbang.dingtalk.DingTalkRobotClient;
 import cn.xiaojianbang.dingtalk.entity.DingTalkRobotParams;
 import cn.xiaojianbang.dingtalk.utils.DingTalkMessageUtil;
 import cn.xiaojianbang.domain.User;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by lf on 2020/12/24
  */
+@Api(tags = {"用户模块"})
 @RestController
 @RequestMapping("/api/v1/user")
 public class UserController {
@@ -27,6 +31,12 @@ public class UserController {
     public String getUserById(Long id) {
         user.setId(id.toString());
         return user.toString();
+    }
+
+    @ApiOperation(value = "获取用户详情")
+    @GetMapping("/details")
+    public User userDetails(){
+        return user;
     }
 
     @GetMapping("/moniter")

@@ -17,6 +17,7 @@
     <modules>
         <module>springboot-undertow</module>
         <module>dingtalk-spring-boot-starter</module>
+        <module>springboot-docker</module>
     </modules>
 
     <properties>
