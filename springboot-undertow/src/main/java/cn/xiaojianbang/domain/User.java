@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 /**
  * Created by lf on 2020/12/24
  */
-@Component
 @ConfigurationProperties(prefix = "my.user")
 public class User {
     private String id;

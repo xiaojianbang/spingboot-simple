@@ -27,6 +27,7 @@ spring:
   mvc:
     contentnegotiation:
       favor-parameter: true
+#    static-path-pattern: /static/**
 
 # swagger2配置
 swagger2:
