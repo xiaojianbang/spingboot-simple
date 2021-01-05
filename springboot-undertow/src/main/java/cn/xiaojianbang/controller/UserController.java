@@ -30,7 +30,7 @@ public class UserController {
     private User user;
 
 
-    @PassLogin
+//    @PassLogin
     @GetMapping("/id")
     public User getUserById(Long id) {
         user.setId(id.toString());
