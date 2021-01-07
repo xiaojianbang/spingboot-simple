@@ -1,5 +1,6 @@
 package cn.xiaojianbang;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +16,7 @@ public class UnderTowApplicationTest {
     private JdbcTemplate jdbcTemplate;
 
 
+    @DisplayName("jdbcTemplate测试")
     @Test
     public void testJdbcTemplate(){
         Long count = jdbcTemplate.queryForObject("select count(*) from student", Long.class);

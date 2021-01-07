@@ -36,9 +36,40 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: spring-boot-undertow
+  # admin-server 地址
+  boot:
+    admin:
+      client:
+        url: http://localhost:10000
 
 
 # swagger2配置
 swagger2:
   enable: true
 
+# 监控
+management:
+  endpoints:
+    enabled-by-default: true # 监控端点总开关
+    web:
+      base-path: /monitor
+      exposure:
+        include: '*' # 暴露所有端点
+
+  endpoint:
+    health:
+      show-details: always
+      enabled: true # 单独开启health端点
+    info:
+      enabled: true
+    beans:
+      enabled: true
+    metrics:
+      enabled: true
+info:
+  appName: springboot-undertow
+  appVersion: v1.0.0
+  mavenProjectName: @project.artifactId@ # 获取pox文件内信息
+  mavenProjectVersion: @project.version@
