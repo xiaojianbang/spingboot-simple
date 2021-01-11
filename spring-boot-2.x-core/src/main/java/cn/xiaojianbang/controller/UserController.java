@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,15 @@ public class UserController {
     @Autowired
     private User user;
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @PassLogin
+    @GetMapping("/sql")
+    public String getSql(){
+        Long count = jdbcTemplate.queryForObject("select count(*) from user", Long.class);
+        return count.toString();
+    }
 
 //    @PassLogin
     @GetMapping("/id")

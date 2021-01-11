@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * Created by lf on 2021/1/5
  */
 @SpringBootTest
-public class UnderTowApplicationTest {
+public class CoreApplicationTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

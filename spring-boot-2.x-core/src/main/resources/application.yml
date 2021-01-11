@@ -1,14 +1,12 @@
 server:
   port: 8001
 
-
+# 自定义参数配置
 my:
   user:
     id: 1L
     username: lf
     password: 123456
-
-
 
 
 #debug: true
@@ -18,16 +16,25 @@ my:
 #    static-path-pattern: /res/**
 #  resources:
 #    static-locations: classpath:/static/
+
+# 钉钉机器人配置
 dingtalk:
   access-token: ef954eb8c8dc95782224e0a856872092e55e048107e8b1d39c11eb1b4eb14dc4
   secret: SEC734c375ce07f3a58ae244df4e84f2ccb064d28603ab5608609712d006aa375ba
 
 # 开启请求参数内容协商
 spring:
+  application:
+    name: spring-boot-undertow
   mvc:
     contentnegotiation:
       favor-parameter: true
 #    static-path-pattern: /static/**
+  # admin-server 地址
+  boot:
+    admin:
+      client:
+        url: http://localhost:10000
 
   # 原生datasource配置
   datasource:
@@ -36,13 +43,21 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-  application:
-    name: spring-boot-undertow
-  # admin-server 地址
-  boot:
-    admin:
-      client:
-        url: http://localhost:10000
+    druid:
+      stat-view-servlet: # 监控页面
+        enabled: true
+        login-username: admin
+        login-password: admin
+      web-stat-filter: # web服务监控
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      filters: stat,wall # 监控sql和防火墙
+      reset-stat-enable: false # 重置数据按钮
+
+
+
+
 
 
 # swagger2配置

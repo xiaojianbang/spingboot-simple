@@ -10,7 +10,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-undertow</artifactId>
+    <artifactId>spring-boot-2.x-core</artifactId>
 
     <dependencies>
         <!-- 引入钉钉机器人提醒服务 -->
